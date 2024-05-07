@@ -41,7 +41,12 @@ class Jetski extends Watercraft {
        super.displayInfo();
        System.out.println("Engine Power: " + enginePower);
    }
-}
+   }
+   void displayInfo() {
+       super.displayInfo();
+       System.out.println("Length: " + length);
+       System.out.println("Luxury Level: " + luxuryLevel);
+     
 class Yacht extends Watercraft {
    int length;
    String luxuryLevel;
@@ -50,25 +55,20 @@ class Yacht extends Watercraft {
        this.length = length;
        this.luxuryLevel = luxuryLevel;
    }
-   void displayInfo() {
-       super.displayInfo();
-       System.out.println("Length: " + length);
-       System.out.println("Luxury Level: " + luxuryLevel);
-   }
-public class info {
+public class Main {
    public static void main(String[] args) {
        Marina marina = new Marina("Marina1", 50, "123 Marina St");
-       Boat boat = new Boat("REG123", 1, "Red", "Model1", 2020, "Speedboat", 5);
-       Jetski jetski = new Jetski("REG124", 2, "Blue", "Model2", 2021, 200);
-       Yacht yacht = new Yacht("REG125", 3, "White", "Model3", 2022, 30, "High");
-       marina.addWatercraft(boat);
+       Jetski jetski = new Jetski("REG124", 1, "Blue", "Model2", 2021, 200);
+       Boat boat = new Boat("REG123", 2, "Yellow", "Model6", 2021, "Speedtboat", 5);
+       Yacht yacht = new Yacht("REG125", 3, "Black", "Model3", 2021, 26, "Small");
        marina.addWatercraft(jetski);
+       marina.addWatercraft(boat); 
        marina.addWatercraft(yacht);
        boat.displayInfo();
        jetski.displayInfo();
        yacht.displayInfo();
-       marina.removeWatercraft(boat);
        marina.removeWatercraft(jetski);
+       marina.removeWatercraft(boat);
        marina.removeWatercraft(yacht);
    }
 }
